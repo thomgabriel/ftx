@@ -7,7 +7,7 @@ For more information, see [the FTX documentation.](https://docs.ftx.com/)
 
 ## Installation
 
-    $ pip install ftx
+    $ pip3 install ftx
 
 ## Quickstart
 This is an introduction on how to get started with FTX client. First, make sure the FTX library is installed.
