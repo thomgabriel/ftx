@@ -73,9 +73,9 @@ Orders can be modified by providing the original order ID.
     >>> client.place_order('BTC/USD', 'sell', 12345.0, 10)
     {"createdAt": "2020-08-20T17:33:19.115690+00:00","filledSize": 0,"id": 9596912,"market": "BTC/USD"...
 
-    >>> client.modify_order(9596912, 12500.0, 15).result()
+    >>> client.modify_order(9596912, 12500.0, 15)
 
 ### Canceling orders
 An order can be canceled given the order ID:
 
-    client.cancel_order(9596912).result()
+    client.cancel_order(9596912)
