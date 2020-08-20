@@ -23,7 +23,7 @@ Get the orderbook levels of bid/ask:
 
     >>> import ftx
     >>> client = ftx.FtxClient()
-    >>> result = ftx.get_orderbook('BTC/USD', 1)
+    >>> result = client.get_orderbook('BTC/USD', 1)
     >>> result
     {'asks': [[11861.0, 1.778]], 'bids': [[11860.5, 0.1]]}
 
@@ -36,14 +36,14 @@ Get the orderbook levels of bid/ask:
 ### Market's Instrument data
 The API supports fetching full data for one or multiple markets.
 
-    >>> ftx.get_market('BTC/USD')
+    >>> client.get_market('BTC/USD')
     {'ask': 11849.0, 'baseCurrency': 'BTC', 'bid': 11848.5, 'change1h': 0.00025325004220834034, 'change24h': 0.008983693106825051, 'changeBod': 0.006925855109411514, 'enabled': True, 'last': 11849.0, 'minProvideSize': 0.0001, 'name': 'BTC/USD', 'postOnly': False, 'price': 11849.0, 'priceIncrement': 0.5, 'quoteCurrency': 'USD', 'quoteVolume24h': 9271567.5201, 'restricted': False, 'sizeIncrement': 0.0001, 'type': 'spot', 'underlying': None, 'volumeUsd24h': 9271567.5201}
 
 ### Date ranges
 Any time-based parameters accept Python `datetime` objects. All timestamps returned from FTX are UTC.
 
     >>> client = ftx.FtxClient()
-    >>> ftx.get_trades('BTC/USD', 1, datetime.datetime(2020,8,20).timestamp())
+    >>> client.get_trades('BTC/USD', 1, datetime.datetime(2020,8,20).timestamp())
     [{'id': 88953674, 'liquidation': False, 'price': 11861.0, 'side': 'sell', 'size': 0.0105, 'time': '2020-08-20T17:33:19.115690+00:00'}]
 
 ### Authenticated endpoints
